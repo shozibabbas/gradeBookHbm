@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Debug settings. Never use them in a production environment. -->
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="use_sql_comments">false</property>
+    
+    <!-- Auto Generate my tables please!-->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
+    <!-- DB Connection settings -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gradebook?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    
+    <!-- mappings for annotated classes -->
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Clo"/>
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Content"/>
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Course"/>
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Grade"/>
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Student"/>
+    <mapping class="pk.edu.nust.seecs.gradebook.entity.Teacher"/>
+  </session-factory>
+</hibernate-configuration>
